@@ -1,8 +1,8 @@
 package tech.challenge.fastfood.fastfood.usecases.customer
 
+import com.fastfood.auth.common.interfaces.gateway.CustomerGatewayInterface
+import com.fastfood.auth.entities.Customer
 import org.springframework.stereotype.Service
-import tech.challenge.fastfood.fastfood.common.interfaces.gateway.CustomerGatewayInterface
-import tech.challenge.fastfood.fastfood.entities.Customer
 import java.util.*
 
 @Service

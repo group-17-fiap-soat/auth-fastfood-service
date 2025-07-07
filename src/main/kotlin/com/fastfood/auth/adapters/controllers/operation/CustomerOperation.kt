@@ -1,5 +1,7 @@
 package com.fastfood.auth.adapters.controllers.operation
 
+import com.fastfood.auth.common.dto.request.AuthCustomerRequestV1
+import com.fastfood.auth.common.dto.request.CreateCustomerRequestV1
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.media.Schema
@@ -9,8 +11,6 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
-import tech.challenge.fastfood.fastfood.common.dto.request.AuthCustomerRequestV1
-import tech.challenge.fastfood.fastfood.common.dto.request.CreateCustomerRequestV1
 import tech.challenge.fastfood.fastfood.common.dto.response.CustomerResponseV1
 import java.util.*
 

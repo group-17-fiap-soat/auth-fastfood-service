@@ -1,10 +1,10 @@
 package tech.challenge.fastfood.fastfood.usecases.customer
 
+import com.fastfood.auth.common.exception.InvalidCustomerDataException
 import com.fastfood.auth.common.interfaces.gateway.CustomerGatewayInterface
+import com.fastfood.auth.common.utils.Validator
 import com.fastfood.auth.entities.Customer
 import org.springframework.stereotype.Service
-import tech.challenge.fastfood.fastfood.common.exception.InvalidCustomerDataException
-import tech.challenge.fastfood.fastfood.common.utils.Validator
 
 @Service
 class CreateCustomerUseCase(

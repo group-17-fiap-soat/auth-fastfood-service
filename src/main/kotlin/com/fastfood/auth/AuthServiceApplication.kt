@@ -1,4 +1,4 @@
-package com.fastfood.auth_service
+package com.fastfood.auth
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
