@@ -4,7 +4,7 @@ import com.fastfood.auth.adapters.presenters.CustomerMapper
 import com.fastfood.auth.common.dto.request.AuthFeignRequest
 import com.fastfood.auth.entities.Customer
 import org.springframework.stereotype.Component
-import tech.challenge.fastfood.fastfood.adapters.gateways.feign.AuthFeignGatewayInterface
+import com.fastfood.auth.adapters.gateways.feign.AuthFeignGatewayInterface
 
 @Component
 class AuthFeignGateway(

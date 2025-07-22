@@ -4,7 +4,7 @@ import com.fastfood.auth.common.dao.CustomerDAO
 import com.fastfood.auth.common.dto.request.CreateCustomerRequestV1
 import com.fastfood.auth.entities.Customer
 import tech.challenge.fastfood.fastfood.common.dto.response.AuthFeignResponse
-import tech.challenge.fastfood.fastfood.common.dto.response.CustomerResponseV1
+import com.fastfood.auth.common.dto.response.CustomerResponseV1
 
 object CustomerMapper {
     fun fromDaoToEntity(dao: CustomerDAO?) = Customer(

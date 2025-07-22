@@ -5,14 +5,14 @@ import com.fastfood.auth.adapters.presenters.CustomerMapper
 import com.fastfood.auth.common.dto.request.AuthCustomerRequestV1
 import com.fastfood.auth.common.dto.request.CreateCustomerRequestV1
 import com.fastfood.auth.common.exception.InvalidCustomerDataException
+import com.fastfood.auth.usecases.customer.CreateCustomerUseCase
 import com.fastfood.auth.usecases.customer.GetCustomerByCpfUseCase
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import tech.challenge.fastfood.fastfood.common.dto.response.CustomerResponseV1
-import tech.challenge.fastfood.fastfood.usecases.customer.CreateCustomerUseCase
-import tech.challenge.fastfood.fastfood.usecases.customer.GetCustomerByIdUseCase
+import com.fastfood.auth.common.dto.response.CustomerResponseV1
+import com.fastfood.auth.usecases.customer.GetCustomerByIdUseCase
 import java.util.*
 
 @RestController

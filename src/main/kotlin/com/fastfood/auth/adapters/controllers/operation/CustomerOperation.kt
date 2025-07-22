@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
-import tech.challenge.fastfood.fastfood.common.dto.response.CustomerResponseV1
+import com.fastfood.auth.common.dto.response.CustomerResponseV1
 import java.util.*
 
 interface CustomerOperation {
