@@ -1,4 +1,4 @@
-package tech.challenge.fastfood.fastfood.usecases.customer
+package com.fastfood.auth.usecases.customer
 
 import com.fastfood.auth.common.exception.InvalidCustomerDataException
 import com.fastfood.auth.common.interfaces.gateway.CustomerGatewayInterface
