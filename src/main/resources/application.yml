@@ -51,3 +51,5 @@ feign:
         loggerLevel: full
 server:
   port: 8080
+
+auth.lambda.url: https://06vrwdm931.execute-api.us-east-1.amazonaws.com/

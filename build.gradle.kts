@@ -37,7 +37,6 @@ dependencies {
     implementation("com.mercadopago:sdk-java:2.1.29")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("com.nimbusds:nimbus-jose-jwt:9.37")
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")

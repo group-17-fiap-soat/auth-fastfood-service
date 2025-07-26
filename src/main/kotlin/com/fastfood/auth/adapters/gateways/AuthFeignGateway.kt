@@ -13,7 +13,6 @@ class AuthFeignGateway(
 
     fun getCustomerByCpf(cpf: String): Customer {
         val response = authFeignGatewayInterface.authenticate(AuthFeignRequest(cpf))
-
         return CustomerMapper.fromAuthFeignResponse(response).copy(cpf = cpf)
     }
 }
