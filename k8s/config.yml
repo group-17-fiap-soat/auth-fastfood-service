@@ -49,11 +49,6 @@ spec:
                   name: auth-fastfood-secret
                   key: DATABASE_PASSWORD
 
-            - name: MERCADO_PAGO_ACCESS_TOKEN
-              valueFrom:
-                configMapKeyRef:
-                  name: auth-fastfood-config
-                  key: MERCADO_PAGO_ACCESS_TOKEN
           resources:
             requests:
               memory: "512Mi"
@@ -119,49 +114,50 @@ spec:
           type: Utilization
           averageUtilization: 50
 
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: metrics-server
-  namespace: kube-system
-  labels:
-    k8s-app: metrics-server
-spec:
-  selector:
-    matchLabels:
-      k8s-app: metrics-server
-  template:
-    metadata:
-      labels:
-        k8s-app: metrics-server
-    spec:
-      serviceAccountName: metrics-server
-      volumes:
-        - name: tmp-dir
-          emptyDir: {}
-      hostNetwork: true
-      containers:
-        - name: metrics-server
-          image: k8s.gcr.io/metrics-server/metrics-server:v0.3.7
-          imagePullPolicy: IfNotPresent
-          args:
-            - /metrics-server
-            - --cert-dir=/tmp
-            - --secure-port=4443
-            - --kubelet-preferred-address-types=InternalIP
-            - --kubelet-use-node-status-port
-            - --kubelet-insecure-tls
-          ports:
-            - name: main-port
-              containerPort: 4443
-              protocol: TCP
-          securityContext:
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-          volumeMounts:
-            - name: tmp-dir
-              mountPath: /tmp
-      nodeSelector:
-        kubernetes.io/os: linux
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: metrics-server
+#  namespace: kube-system
+#  labels:
+#    k8s-app: metrics-server
+#spec:
+#  selector:
+#    matchLabels:
+#      k8s-app: metrics-server
+#  template:
+#    metadata:
+#      labels:
+#        k8s-app: metrics-server
+#    spec:
+#      serviceAccountName: metrics-server
+#      volumes:
+#        - name: tmp-dir
+#          emptyDir: {}
+#      hostNetwork: true
+#      containers:
+#        - name: metrics-server
+#          image: registry.k8s.io/metrics-server/metrics-server:v0.6.4
+#          imagePullPolicy: IfNotPresent
+#          args:
+#            - /metrics-server
+#            - --cert-dir=/tmp
+#            - --secure-port=4443
+#            - --kubelet-preferred-address-types=InternalIP
+#            - --kubelet-use-node-status-port
+#            - --kubelet-insecure-tls
+#          ports:
+#            - name: main-port
+#              containerPort: 4443
+#              protocol: TCP
+#          securityContext:
+#            readOnlyRootFilesystem: true
+#            runAsNonRoot: true
+#            runAsUser: 1000
+#          volumeMounts:
+#            - name: tmp-dir
+#              mountPath: /tmp
+#      nodeSelector:
+#        kubernetes.io/os: linux
+
