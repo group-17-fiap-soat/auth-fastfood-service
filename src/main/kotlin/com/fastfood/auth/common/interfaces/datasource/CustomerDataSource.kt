@@ -7,6 +7,6 @@ import java.util.*
 
 @Repository
 interface CustomerDataSource : JpaRepository<CustomerDAO, UUID> {
-    fun findByCpf(cpf: String): Optional<CustomerDAO>
-    fun findFirstByEmail(email: String): Optional<CustomerDAO>
+    fun findByCpf(cpf: String): CustomerDAO?
+    fun findFirstByEmail(email: String): CustomerDAO?
 }

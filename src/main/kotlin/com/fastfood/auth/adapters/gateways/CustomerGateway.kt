@@ -17,15 +17,15 @@ class CustomerGateway(
     }
 
     override fun findByCpf(cpf: String): Customer? {
-        return CustomerMapper.fromDaoToEntity(customerDataSource.findByCpf(cpf).orElse(null))
+        return customerDataSource.findByCpf(cpf)?.let(CustomerMapper::fromDaoToEntity )
     }
 
     override fun findById(id: UUID): Customer? {
-        return CustomerMapper.fromDaoToEntity(customerDataSource.findById(id).orElse(null))
+        return customerDataSource.findById(id).orElse(null)?.let(CustomerMapper::fromDaoToEntity)
     }
 
     override fun findByEmail(email: String): Customer? {
-        return CustomerMapper.fromDaoToEntity(customerDataSource.findFirstByEmail(email).orElse(null))
+        return customerDataSource.findFirstByEmail(email)?.let(CustomerMapper::fromDaoToEntity)
     }
 
 }
