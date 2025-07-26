@@ -70,7 +70,7 @@ jobs:
 
       - name: Replace image tag in config.yml
         run: |
-          sed -i "s|payment-fastfood:latest|payment-fastfood:$IMAGE_TAG|g" k8s/config.yml
+          sed -i "s|auth-fastfood:latest|auth-fastfood:$IMAGE_TAG|g" k8s/config.yml
 
       - name: Update kubeconfig for EKS
         run: |
