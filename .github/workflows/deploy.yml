@@ -50,7 +50,14 @@ jobs:
       - name: Run Sonar with Gradle
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN}
+        run: ./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN} -Dsonar.scanner.metadataFilePath=$(pwd)/build/sonar/report-task.txt
+
+      - name: Wait for SonarQube Quality Gate result
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          scanMetadataReportFile: build/sonar/report-task.txt
 
       - name: Login to Amazon ECR
         id: login-ecr
