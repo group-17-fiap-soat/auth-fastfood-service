@@ -44,11 +44,13 @@ jobs:
       - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Build and analyze
+      - name: Run tests and generate coverage
+        run: ./gradlew build jacocoTestReport
+
+      - name: Run Sonar with Gradle
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: ./gradlew build sonar --info
+        run: ./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN}
 
       - name: Login to Amazon ECR
         id: login-ecr
