@@ -8,6 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients
 @EnableFeignClients
 open class AuthServiceApplication
 
+
 fun main(args: Array<String>) {
 	runApplication<AuthServiceApplication>(*args)
 }
